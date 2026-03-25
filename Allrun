@@ -3,6 +3,12 @@ cd "${0%/*}" || exit                                # Run from this directory
 . ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
 #------------------------------------------------------------------------------
 
+chmod +x Allclean Allrun.pre
+
+(cd background && chmod +x Allrun.pre Allclean Allrun)
+
+(cd floatingBody && chmod +x Allrun.pre Allclean)
+
 ./Allrun.pre
 
 (cd background  && ./Allrun)
