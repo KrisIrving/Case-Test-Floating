@@ -30,13 +30,19 @@ sixDoFRigidBodyMotionCoeffs
     centreOfMass    (0.5 0.5 0.5);
 
     // Cuboid dimensions
-    R              0.1;
+    // R              0.1;
+
+    Lx              0.2;
+    Ly              0.2;
+    Lz              0.2;
 
     // Density of the solid
-    rhoSolid        200;
+    rhoSolid        800;
 
     // Cuboid mass
-    mass            #eval{ $rhoSolid*(4.0/3.0)*3.141592653589793*pow($R,3) };
+    // mass            #eval{ $rhoSolid*(4.0/3.0)*3.141592653589793*pow($R,3) };
+
+    mass            #eval{ $rhoSolid*$Lx*$Ly*$Lz };
 
     // Cuboid moment of inertia about the centre of mass
     momentOfInertia #codeStream
@@ -46,10 +52,20 @@ sixDoFRigidBodyMotionCoeffs
             #include "diagTensor.H"
         #};
 
+        // code
+        // #{
+        //     scalar I = (2.0/5.0)*$mass*sqr($R);
+        //     os << diagTensor(I, I, I);
+        // #};
+
         code
         #{
-            scalar I = (2.0/5.0)*$mass*sqr($R);
-            os << diagTensor(I, I, I);
+            scalar sqrLx = sqr($Lx);
+            scalar sqrLy = sqr($Ly);
+            scalar sqrLz = sqr($Lz);
+            os  <<
+                $mass
+               *diagTensor(sqrLy + sqrLz, sqrLx + sqrLz, sqrLx + sqrLy)/12.0;
         #};
     };
 
