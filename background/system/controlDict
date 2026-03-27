@@ -135,6 +135,31 @@ functions
             }
         }
     }
+
+    liquidMask
+    {
+        type            exprField;
+        libs            (fieldFunctionObjects);
+
+        writeControl    adjustableRunTime;
+        writeInterval   0.01;
+
+        field           liquidMask;
+        dimensions      [0 0 0 0 0 0 0];
+
+        expression      "pos(alpha.water - 0.999)";
+    }
+
+    liquidVolume
+    {
+        type            vtkWrite;
+        libs            (utilityFunctionObjects);
+
+        writeControl    adjustableRunTime;
+        writeInterval   0.01;
+
+        fields          (alpha.water liquidMask U p p_rgh);
+    }
 }
 
 
