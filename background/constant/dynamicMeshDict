@@ -30,18 +30,18 @@ sixDoFRigidBodyMotionCoeffs
     centreOfMass    (0.5 0.5 0.5);
 
     // Cuboid dimensions
-    // R              0.1;
 
-    Lx              0.2;
-    Ly              0.2;
-    Lz              0.2;
+    // R              0.1;
+    Lx              0.02;
+    Ly              0.02;
+    Lz              0.02;
 
     // Density of the solid
-    rhoSolid        800;
+    rhoSolid        4000;
 
     // Cuboid mass
-    // mass            #eval{ $rhoSolid*(4.0/3.0)*3.141592653589793*pow($R,3) };
 
+    // mass            #eval{ $rhoSolid*(4.0/3.0)*3.141592653589793*pow($R,3) };
     mass            #eval{ $rhoSolid*$Lx*$Ly*$Lz };
 
     // Cuboid moment of inertia about the centre of mass
