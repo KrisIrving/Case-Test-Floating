@@ -32,7 +32,7 @@ actions
         type    cellSet;
         action  new;
         source  boxToCell;
-        box     (0.49 0.49 0.49) (0.51 0.51 0.51);
+        box     (285e-6 285e-6 5e-6) (315e-6 315e-6 35e-6);
     }
 
     {
