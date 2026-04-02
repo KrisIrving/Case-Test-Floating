@@ -12,6 +12,8 @@ writeVtkSeries isoInterface isoSurf
 writeVtkSeries floatingObject floatingObject
 writeVtkSeries stationaryWalls stationaryWalls
 
+runApplication reconstructPar
+
 touch ${PWD##*/}.foam
 
 #------------------------------------------------------------------------------

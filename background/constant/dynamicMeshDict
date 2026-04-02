@@ -29,6 +29,8 @@ sixDoFRigidBodyMotionCoeffs
 
     centreOfMass    (300e-6 300e-6 20e-6);
 
+    velocity        (-0.15 0.0 0.0);
+
     // Cuboid dimensions
 
     // R              0.1;
