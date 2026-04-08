@@ -35,28 +35,28 @@ actions
     //     box     (285e-6 285e-6 5e-6) (315e-6 315e-6 35e-6);
     // }
 
-    {
-        name    c0;
-        type    cellSet;
-        action  new;
-        source  boxToCell;
-        box     (285e-2 285e-2 5e-2) (315e-2 315e-2 35e-2);
-    }
-
-    {
-        name    c0;
-        type    cellSet;
-        action  invert;
-    }
-
-    // // stl
     // {
     //     name    c0;
     //     type    cellSet;
     //     action  new;
-    //     source  regionToCell;
-    //     insidePoints    ((0.25 0.25 0.15));
+    //     source  boxToCell;
+    //     box     (285e-2 285e-2 5e-2) (315e-2 315e-2 35e-2);
     // }
+
+    // {
+    //     name    c0;
+    //     type    cellSet;
+    //     action  invert;
+    // }
+
+    // stl
+    {
+        name    c0;
+        type    cellSet;
+        action  new;
+        source  regionToCell;
+        insidePoints    ((0.25e-2 0.25e-2 0.15e-2));
+    }
 );
 
 

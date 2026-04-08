@@ -31,11 +31,11 @@ sixDoFRigidBodyMotionCoeffs
 
     centreOfMass    (300e-2 300e-2 20e-2);
 
-    velocity        (-0.5 0.0 0.0);
+    velocity        (-0.1 0.0 0.0);
 
     // Cuboid dimensions
 
-    // R              0.1;
+    R              15e-2;
 
     // // μm
     // Lx              30e-6;
@@ -43,17 +43,17 @@ sixDoFRigidBodyMotionCoeffs
     // Lz              30e-6;
 
     // m
-    Lx              30e-2;
-    Ly              30e-2;
-    Lz              30e-2;
+    // Lx              30e-2;
+    // Ly              30e-2;
+    // Lz              30e-2;
 
     // Density of the solid
     rhoSolid        3000;
 
     // Cuboid mass
 
-    // mass            #eval{ $rhoSolid*(4.0/3.0)*3.141592653589793*pow($R,3) };
-    mass            #eval{ $rhoSolid*$Lx*$Ly*$Lz };
+    mass            #eval{ $rhoSolid*(4.0/3.0)*3.141592653589793*pow($R,3) };
+    // mass            #eval{ $rhoSolid*$Lx*$Ly*$Lz };
 
     // Cuboid moment of inertia about the centre of mass
     momentOfInertia #codeStream
@@ -63,21 +63,21 @@ sixDoFRigidBodyMotionCoeffs
             #include "diagTensor.H"
         #};
 
-        // code
-        // #{
-        //     scalar I = (2.0/5.0)*$mass*sqr($R);
-        //     os << diagTensor(I, I, I);
-        // #};
-
         code
         #{
-            scalar sqrLx = sqr($Lx);
-            scalar sqrLy = sqr($Ly);
-            scalar sqrLz = sqr($Lz);
-            os  <<
-                $mass
-               *diagTensor(sqrLy + sqrLz, sqrLx + sqrLz, sqrLx + sqrLy)/12.0;
+            scalar I = (2.0/5.0)*$mass*sqr($R);
+            os << diagTensor(I, I, I);
         #};
+
+        // code
+        // #{
+        //     scalar sqrLx = sqr($Lx);
+        //     scalar sqrLy = sqr($Ly);
+        //     scalar sqrLz = sqr($Lz);
+        //     os  <<
+        //         $mass
+        //        *diagTensor(sqrLy + sqrLz, sqrLx + sqrLz, sqrLx + sqrLy)/12.0;
+        // #};
     };
 
     report          on;

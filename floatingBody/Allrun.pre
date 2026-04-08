@@ -3,19 +3,19 @@ cd "${0%/*}" || exit                                # Run from this directory
 . ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
 #------------------------------------------------------------------------------
 
-runApplication blockMesh
+# runApplication blockMesh
 
-runApplication topoSet
+# runApplication topoSet
 
-runApplication subsetMesh -overwrite c0 -patch floatingObject
+# runApplication subsetMesh -overwrite c0 -patch floatingObject
 
 
 #------------------------------------------------------------------------------
 
-# runApplication blockMesh
-# runApplication surfaceFeatureExtract
-# runApplication snappyHexMesh -overwrite
-# runApplication topoSet
-# runApplication subsetMesh -overwrite c0 -patch floatingObject
+runApplication blockMesh
+runApplication surfaceFeatureExtract
+runApplication snappyHexMesh -overwrite
+runApplication topoSet
+runApplication subsetMesh -overwrite c0 -patch floatingObject
 
 #------------------------------------------------------------------------------
