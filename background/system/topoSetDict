@@ -29,7 +29,7 @@ actions
         type    cellSet;
         action  new;
         source  regionToCell;
-        insidePoints ((1 1 1));
+        insidePoints ((1e-2 1e-2 1e-2));
     }
 
     {

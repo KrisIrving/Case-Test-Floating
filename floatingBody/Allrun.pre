@@ -10,10 +10,12 @@ runApplication topoSet
 runApplication subsetMesh -overwrite c0 -patch floatingObject
 
 
+#------------------------------------------------------------------------------
+
 # runApplication blockMesh
-
 # runApplication surfaceFeatureExtract
-
 # runApplication snappyHexMesh -overwrite
+# runApplication topoSet
+# runApplication subsetMesh -overwrite c0 -patch floatingObject
 
 #------------------------------------------------------------------------------

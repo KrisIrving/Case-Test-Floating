@@ -40,7 +40,7 @@ actions
         type    cellSet;
         action  new;
         source  boxToCell;
-        box     (285 285 5) (315 315 35);
+        box     (285e-2 285e-2 5e-2) (315e-2 315e-2 35e-2);
     }
 
     {
@@ -48,6 +48,15 @@ actions
         type    cellSet;
         action  invert;
     }
+
+    // // stl
+    // {
+    //     name    c0;
+    //     type    cellSet;
+    //     action  new;
+    //     source  regionToCell;
+    //     insidePoints    ((0.25 0.25 0.15));
+    // }
 );
 
 
