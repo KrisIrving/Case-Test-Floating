@@ -16,12 +16,20 @@ FoamFile
 
 actions
 (
+    // {
+    //     name    c0;
+    //     type    cellSet;
+    //     action  new;
+    //     source  regionToCell;
+    //     insidePoints ((1e-6 1e-6 1e-6));
+    // }
+        
     {
         name    c0;
         type    cellSet;
         action  new;
         source  regionToCell;
-        insidePoints ((1e-6 1e-6 1e-6));
+        insidePoints ((1 1 1));
     }
 
     {

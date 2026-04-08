@@ -22,9 +22,18 @@ defaultFieldValues
 
 regions
 (
+    // boxToCell
+    // {
+    //     box ( 0 0 -240e-6 ) ( 600e-6 600e-6 0 );
+    //     fieldValues
+    //     (
+    //         volScalarFieldValue alpha.water 1
+    //     );
+    // }
+
     boxToCell
     {
-        box ( 0 0 -240e-6 ) ( 600e-6 600e-6 0 );
+        box ( 0 0 -240 ) ( 600 600 0 );
         fieldValues
         (
             volScalarFieldValue alpha.water 1

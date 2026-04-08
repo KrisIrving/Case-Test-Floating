@@ -27,12 +27,20 @@ actions
     //     innerRadius 0;
     // }
 
+    // {
+    //     name    c0;
+    //     type    cellSet;
+    //     action  new;
+    //     source  boxToCell;
+    //     box     (285e-6 285e-6 5e-6) (315e-6 315e-6 35e-6);
+    // }
+
     {
         name    c0;
         type    cellSet;
         action  new;
         source  boxToCell;
-        box     (285e-6 285e-6 5e-6) (315e-6 315e-6 35e-6);
+        box     (285 285 5) (315 315 35);
     }
 
     {

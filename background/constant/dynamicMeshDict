@@ -27,16 +27,25 @@ sixDoFRigidBodyMotionCoeffs
     innerDistance   100.0;
     outerDistance   101.0;
 
-    centreOfMass    (300e-6 300e-6 20e-6);
+    // centreOfMass    (300e-6 300e-6 20e-6);
 
-    velocity        (-0.15 0.0 0.0);
+    centreOfMass    (300 300 20);
+
+    velocity        (-1 0.0 0.0);
 
     // Cuboid dimensions
 
     // R              0.1;
-    Lx              30e-6;
-    Ly              30e-6;
-    Lz              30e-6;
+
+    // // μm
+    // Lx              30e-6;
+    // Ly              30e-6;
+    // Lz              30e-6;
+
+    // m
+    Lx              30;
+    Ly              30;
+    Lz              30;
 
     // Density of the solid
     rhoSolid        4000;
